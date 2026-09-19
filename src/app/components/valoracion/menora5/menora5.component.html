@@ -1,0 +1,20 @@
+<!-- <div class="content">
+    <textarea name="" id="" [value]="textarea()" #nombrearea (input)="textarea.set(nombrearea.value)"></textarea>
+    <button type="button" (click)="atras()">Atras</button>
+    <button type="button" (click)="enviar()">Enviar</button>
+</div> -->
+
+<div class="content" #content>
+    <label for="" class="title">¿Cual es el motivo de su valoración?</label>
+    <pg-textarea [ngModel]="textarea()" (ngModelChange)="textarea.set($event)">
+        <textarea pgTextarea id="comment-dark" name="comment" rows="4" placeholder="Comentario..."
+            class="area"></textarea>
+    </pg-textarea>
+</div>
+
+<div class="buttons">
+    <pg-button [label]="'Atras'" [variant]="'primary'" [size]="'md'" [shape]="'rectangle'" [disabled]="false"
+        [fullWidth]="false" type="button" (click)="atras()"></pg-button>
+    <pg-button [label]="'Enviar'" [variant]="'primary'" [size]="'md'" [shape]="'rectangle'" [disabled]="false"
+        [fullWidth]="false" type="button" (click)="enviar()" [disabled]="textarea().trim().length < 10"></pg-button>
+</div>

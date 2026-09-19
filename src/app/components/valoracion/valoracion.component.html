@@ -1,0 +1,36 @@
+<div class="componentes">
+    <label for="" class="title">¿Que tan facil fue hacer tu pago?</label>
+    <div class="rating">
+        <input value="10" name="rate" id="star10" type="radio" [checked]="calificacion() === 10" (change)="onCmbio(10)">
+        <label title="text" for="star10" style="--i: 10;"></label>
+
+        <input value="9" name="rate" id="star9" type="radio" [checked]="calificacion() === 9" (change)="onCmbio(9)">
+        <label title="text" for="star9" style="--i: 9;"></label>
+
+        <input value="8" name="rate" id="star8" type="radio" [checked]="calificacion() === 8" (change)="onCmbio(8)">
+        <label title="text" for="star8" style="--i: 8;"></label>
+
+        <input value="7" name="rate" id="star7" type="radio" [checked]="calificacion() === 7" (change)="onCmbio(7)">
+        <label title="text" for="star7" style="--i: 7;"></label>
+
+        <input value="6" name="rate" id="star6" type="radio" [checked]="calificacion() === 6" (change)="onCmbio(6)">
+        <label title="text" for="star6" style="--i: 6;"></label>
+
+        <input value="5" name="rate" id="star5" type="radio" [checked]="calificacion() === 5" (change)="onCmbio(5)">
+        <label title="text" for="star5" style="--i: 5;"></label>
+
+        <input value="4" name="rate" id="star4" type="radio" [checked]="calificacion() === 4" (change)="onCmbio(4)">
+        <label title="text" for="star4" style="--i: 4;"></label>
+
+        <input value="3" name="rate" id="star3" type="radio" [checked]="calificacion() === 3" (change)="onCmbio(3)">
+        <label title="text" for="star3" style="--i: 3;"></label>
+
+        <input value="2" name="rate" id="star2" type="radio" [checked]="calificacion() === 2" (change)="onCmbio(2)">
+        <label title="text" for="star2" style="--i: 2;"></label>
+
+        <input value="1" name="rate" id="star1" type="radio" [checked]="calificacion() === 1" (change)="onCmbio(1)">
+        <label title="text" for="star1" style="--i: 1;"></label>
+    </div>
+    <pg-button [label]="'Enviar'" [variant]="'primary'" [size]="'lg'" [shape]="'rectangle'" [disabled]="false"
+        [fullWidth]="false" type="button" (click)="enviar()"></pg-button>
+</div>

@@ -1,0 +1,31 @@
+<div class="content">
+
+    <label for="" class="title">¿Que tan probable es que nos recomiendes o uses Pagalo?</label>
+
+    <form class="form">
+        <div class="option1">
+            <label for="01">Muy Probable</label>
+            <input id="01" type="radio" name="r" value="1" (change)="onSelec(1)">
+        </div>
+        <div class="option2">
+            <label for="02">Probable</label>
+            <input id="02" type="radio" name="r" value="2" (change)="onSelec(2)">
+        </div>
+        <div class="option3">
+            <label for="03">Poco Probable</label>
+            <input id="03" type="radio" name="r" value="3" (change)="onSelec(3)">
+        </div>
+        <div class="option4">
+            <label for="04">Improbable</label>
+            <input id="04" type="radio" name="r" value="4" (change)="onSelec(4)">
+        </div>
+    </form>
+</div>
+
+
+<div class="buttons">
+    <pg-button [label]="'Atras'" [variant]="'primary'" [size]="'lg'" [shape]="'rectangle'" [disabled]="false"
+        [fullWidth]="false" type="button" (click)="atras()"></pg-button>
+    <pg-button [label]="'Enviar'" [variant]="'primary'" [size]="'lg'" [shape]="'rectangle'" [disabled]="false"
+        [fullWidth]="false" type="button" (click)="enviar()" [disabled]="seleccionado === null"></pg-button>
+</div>

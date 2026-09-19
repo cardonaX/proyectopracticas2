@@ -1,0 +1,67 @@
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    perspective: 1000px;
+    /* Necesario para que la transformación 3D (translateZ) sea visible */
+}
+
+select {
+    margin-top: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.332);
+    border-radius: 5px;
+    font-size: 15px;
+    width: 200px;
+    height: 30px;
+}
+
+label {
+    font-size: 80px;
+    margin-bottom: 20px;
+    display: inline-block;
+    color: rgba(227, 100, 2, 0.998);
+    /* Vinculación con la nueva animación */
+    -webkit-animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+
+
+@-webkit-keyframes tracking-in-expand-fwd {
+    0% {
+        letter-spacing: -.5em;
+        -webkit-transform: translateZ(-700px);
+        transform: translateZ(-700px);
+        opacity: 0;
+    }
+
+    40% {
+        opacity: .6;
+    }
+
+    100% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+
+@keyframes tracking-in-expand-fwd {
+    0% {
+        letter-spacing: -.5em;
+        -webkit-transform: translateZ(-700px);
+        transform: translateZ(-700px);
+        opacity: 0;
+    }
+
+    40% {
+        opacity: .6;
+    }
+
+    100% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}

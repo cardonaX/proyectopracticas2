@@ -1,0 +1,13 @@
+<div class="body">
+    <div class="content">
+        <label for="">Pagalo</label>
+        <!-- <select name="opciones" id="opciones" placeholder="Seleccionar Tipo de Pago" [(ngModel)]="seleccionar"
+            (change)="enviar()">
+            @for (op of opciones; track op.valor) {
+            <option [value]="op.valor">{{ op.nombre }}</option>
+            }
+        </select> -->
+        <pg-select [(ngModel)]="seleccionar" [options]="opciones" [placeholder]="'Opcion de pago'" [variant]="'classic'"
+            (ngModelChange)="enviar()"></pg-select>
+    </div>
+</div>

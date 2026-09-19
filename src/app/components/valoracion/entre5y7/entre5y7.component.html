@@ -1,0 +1,16 @@
+<div class="content">
+    <label for="" class="title">¿Que podemos hacer para mejorar tu experiencia de pago?</label>
+    <pg-textarea>
+        <textarea pgTextarea id="comment-dark" name="comment" rows="4" placeholder="Comentario..." name="" id=""
+            [ngModel]="textaream5m7()" (ngModelChange)="textaream5m7.set($event)" [value]="textaream5m7()" #m5m7
+            (input)="textaream5m7.set(m5m7.value)" class="area"></textarea>
+    </pg-textarea>
+
+
+</div>
+<div class="buttons">
+    <pg-button [label]="'Atras'" [variant]="'primary'" [size]="'md'" [shape]="'rectangle'" [disabled]="false"
+        [fullWidth]="false" type="button" (click)="atras()"></pg-button>
+    <pg-button [label]="'Enviar'" [variant]="'primary'" [size]="'md'" [shape]="'rectangle'" [disabled]="false"
+        [fullWidth]="false" type="button" (click)="enviar()" [disabled]="textaream5m7().trim().length < 10"></pg-button>
+</div>

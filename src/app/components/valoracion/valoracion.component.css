@@ -1,0 +1,70 @@
+.componentes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.rating {
+    margin-bottom: 15px;
+}
+
+/* Ocultar inputs */
+.rating:not(:checked)>input {
+    position: absolute;
+    appearance: none;
+}
+
+/* Animación de caída para las estrellas */
+.rating:not(:checked)>label {
+    float: right;
+    cursor: pointer;
+    font-size: 35px;
+    color: #666;
+
+    /* Configuración de animación sin sombras */
+    opacity: 0;
+    animation: drop-star-clean 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    animation-delay: calc(var(--i) * 0.08s);
+}
+
+.rating:not(:checked)>label:before {
+    content: '★';
+}
+
+/* Colores de hover e interacción */
+.rating>input:checked+label:hover,
+.rating>input:checked+label:hover~label,
+.rating>input:checked~label:hover,
+.rating>input:checked~label:hover~label,
+.rating>label:hover~input:checked~label {
+    color: #e58e09;
+}
+
+.rating:not(:checked)>label:hover,
+.rating:not(:checked)>label:hover~label {
+    color: #ff9e0b;
+}
+
+.rating>input:checked~label {
+    color: #ffa723;
+}
+
+/* Keyframes solo con caída y opacidad */
+@keyframes drop-star-clean {
+    0% {
+        opacity: 0;
+        transform: translateY(-80px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

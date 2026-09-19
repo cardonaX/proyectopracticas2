@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@import "../node_modules/@pagalo/ui/styles.css";
+@source '../node_modules/@pagalo/ui/**/*.{html,js,ts,mjs}';
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}

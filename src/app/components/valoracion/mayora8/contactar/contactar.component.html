@@ -1,0 +1,96 @@
+<!-- <h1>Hi</h1>
+<form [formGroup]="form" (ngSubmit)="enviar()">
+    <label>Nombre</label>
+    <input type="text" formControlName="nombre">
+
+    <label>Correo</label>
+    <input type="email" formControlName="correo">
+
+    <label>Edad</label>
+    <input type="number" formControlName="edad">
+
+    <label>Teléfono</label>
+    <input type="tel" formControlName="telefono">
+
+    <label>Sexo</label>
+    <select formControlName="sexo">
+        <option value="" disabled selected>Selecciona</option>
+        <option value="M">Masculino</option>
+        <option value="F">Femenino</option>
+        <option value="O">Otro</option>
+    </select>
+
+    <button type="button" (click)="atras()">Atras</button>
+    <button type="button" [disabled]="form.invalid" (click)="enviar()">Enviar</button>
+    <button type="button">No me interesa</button>
+</form> -->
+<pg-form [formGroup]="form" class="formu">
+
+    <pg-form-section title="Gracias por calificarnos" description="¿Podriamos contactarnos contigo?">
+
+
+        <pg-form-field label="" forId="first-name" colSpanClass="sm:col-span-3 ">
+            <pg-input label="Nombre" forId="first-name-required" [required]="true">
+                <input pgInput id="first-name" type="text" name="first-name" formControlName="nombre"
+                    autocomplete="given-name"
+                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-primary sm:text-sm/6" />
+            </pg-input>
+            <!-- <input id="first-name" type="text" name="first-name" formControlName="nombre" autocomplete="given-name"
+                class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-primary sm:text-sm/6" /> -->
+        </pg-form-field>
+
+
+
+        <pg-form-field label="" forId="last-name" colSpanClass="sm:col-span-3">
+            <pg-input label="Edad" forId="email-required" [required]="false">
+                <input pgInput id="age" type="text" name="age" autocomplete="given-name"
+                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-primary sm:text-sm/6" />
+            </pg-input>
+            <!-- <input id="last-name" type="number" name="last-name" formControlName="edad" autocomplete="family-name"
+                class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-primary sm:text-sm/6" /> -->
+        </pg-form-field>
+
+
+
+        <pg-form-field label="" forId="email" colSpanClass="sm:col-span-3">
+
+            <pg-input label="Email" forId="email-required" [required]="true">
+                <input pgInput placeholder="nombre@ejemplo.com" formControlName="correo" id="email" type="email"
+                    name="email" autocomplete="email"
+                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-primary sm:text-sm/6 " />
+            </pg-input>
+        </pg-form-field>
+
+
+
+        <pg-form-field label="" forId="telefono" colSpanClass="sm:col-span-3">
+            <pg-input label="Telefono" forId="email-required" [required]="true">
+                <input pgInput id="telefono" type="tel" name="telefono" formControlName="telefono" autocomplete="tel"
+                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-primary sm:text-sm/6" />
+            </pg-input>
+            <!-- <input id="telefono" type="tel" name="telefono" formControlName="telefono" autocomplete="tel"
+                class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-primary sm:text-sm/6" /> -->
+
+        </pg-form-field>
+
+
+
+        <pg-form-field label="Sexo" forId="sexo" colSpanClass="sm:col-span-3">
+            <pg-select
+                [options]="[{label: 'Masculino', value: 'masculino'}, {label: 'Femenino', value: 'femenino'},  {label: 'Otro', value: 'otro', disabled: true}]"
+                [placeholder]="''" [variant]="'classic'"></pg-select>
+            <!-- <input id="sexo" type="text" name="sexo" formControlName="sexo" autocomplete="sex"
+                class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-primary sm:text-sm/6" /> -->
+        </pg-form-field>
+
+    </pg-form-section>
+
+    <pg-form-actions>
+        <button type="button" class="text-sm/6 font-semibold text-gray-900 nointeresa" (click)="nointeresa()">No me
+            interesa</button>
+        <button type="button" class="text-sm/6 font-semibold text-gray-900" (click)="atras()">Atras</button>
+        <button type="button"
+            class="rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            (click)="enviar()" [disabled]="form.invalid">Enviar</button>
+    </pg-form-actions>
+</pg-form>
