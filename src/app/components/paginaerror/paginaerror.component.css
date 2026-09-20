@@ -1,4 +1,12 @@
 label {
     font-size: 50px;
-    color: red;
+    color: rgba(0, 0, 0, 0.73);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
